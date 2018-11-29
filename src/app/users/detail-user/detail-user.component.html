@@ -1,0 +1,7 @@
+<button routerLink="/users">Back</button>
+<div *ngIf="user">
+  <h1> {{user.username}}</h1>
+  <h3 *ngIf="user.isAdmin">this user is an administrator</h3>
+  <button (click)="delete()">Delete this user</button>
+  <button (click)="update()">Update this user</button>
+</div>

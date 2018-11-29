@@ -1,0 +1,12 @@
+<button routerLink="/users">Back</button>
+<form [formGroup]="updateUserForm" (ngSubmit)="save()">
+  <label>
+    Username:
+    <input type="text" formControlName="username">
+  </label>
+  <label>
+    Admin:
+    <input type="checkbox" formControlName="isAdmin">
+  </label>
+  <button type="submit">Save</button>
+</form>
