@@ -1,1 +1,9 @@
+#navbar {
+  height: 100%;
+  position: fixed;
+  padding-right: 3cm;
+}
 
+#main {
+  padding-left: 3cm;
+}

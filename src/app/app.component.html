@@ -1,4 +1,6 @@
-<div>
-  <app-navbar></app-navbar>
-  <router-outlet></router-outlet>
+<div fxFill fxLayout="row">
+  <app-navbar id="navbar"></app-navbar>
+  <div fxFlexFill fxLayout="column" id="main">
+    <router-outlet></router-outlet>
+  </div>
 </div>
