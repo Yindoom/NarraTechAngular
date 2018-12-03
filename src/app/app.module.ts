@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { LoginComponent } from './auth/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     DetailUserComponent,
     UpdateUserComponent,
     WelcomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
