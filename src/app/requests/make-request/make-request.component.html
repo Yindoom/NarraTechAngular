@@ -1,0 +1,34 @@
+<form [formGroup]="sendRequestForm" (ngSubmit)="save()">
+  <label>
+    TagName:
+    <input type="text" formControlName="tagName" required>
+  </label>
+  <label>
+    From:
+    <input type="datetime-local" formControlName="from" required>
+  </label>
+  <label>
+    <input type="datetime-local" formControlName="to">
+  </label>
+  <label>
+    <input type="time" step="1" formControlName="interval" required>
+  </label>
+  <label>
+    <select formControlName="sampleType">
+      <option *ngFor="let opt of typeoptions">
+        {{opt}}
+      </option>
+    </select>
+  </label>
+  <button type="submit">Save</button>
+</form>
+
+<div *ngIf="samples">
+  <div *ngFor="let sample of samples">
+    <mat-card>
+      <mat-card-header>{{sample.time}}</mat-card-header>
+      <mat-card-subtitle>{{getString(sample)}}</mat-card-subtitle>
+      <mat-card-content>{{sample.value}}</mat-card-content>
+    </mat-card>
+  </div>
+</div>

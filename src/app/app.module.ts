@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatCardModule} from '@angular/material/card';
+import {MakeRequestComponent} from './requests/make-request/make-request.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     DetailUserComponent,
     UpdateUserComponent,
     WelcomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    MakeRequestComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     BrowserAnimationsModule,
     MatButtonModule,
     MatSidenavModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCardModule
 
   ],
   providers: [],
