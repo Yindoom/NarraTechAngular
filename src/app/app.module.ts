@@ -15,7 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import { LoginComponent } from './Shared/login/login.component';
+import { LoginComponent } from './Shared/login/login.component'
+import { ListLogsComponent } from './logs/list-logs/list-logs.component';
+import {MatTableModule} from '@angular/material';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { LoginComponent } from './Shared/login/login.component';
     UpdateUserComponent,
     WelcomeComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    ListLogsComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,9 @@ import { LoginComponent } from './Shared/login/login.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatSidenavModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+
+    MatTableModule,
 
   ],
   providers: [],
