@@ -15,7 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import { LoginComponent } from './auth/login/login.component';
+import { LoginComponent } from './Shared/login/login.component'
 import { ListLogsComponent } from './logs/list-logs/list-logs.component';
 import {MatTableModule} from '@angular/material';
 
