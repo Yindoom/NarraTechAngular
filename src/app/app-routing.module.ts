@@ -8,7 +8,6 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import {MakeRequestComponent} from './requests/make-request/make-request.component';
 import {LoginComponent} from './Shared/login/login.component';
 import {AuthGuard} from './_guards/auth.guard';
-import {LoginComponent} from './auth/login/login.component';
 import {ListLogsComponent} from './logs/list-logs/list-logs.component';
 
 const routes: Routes = [
