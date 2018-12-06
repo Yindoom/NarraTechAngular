@@ -1,34 +1,39 @@
-<form [formGroup]="sendRequestForm" (ngSubmit)="save()">
+<form [formGroup]="sendRequestForm" (ngSubmit)="save()" fxLayout="row">
   <label>
-    TagName:
-    <input type="text" formControlName="tagName" required>
+    TagName: <br>
+    <input type="text" formControlName="tagName" style="height: 18px" required>
   </label>
   <label>
-    From:
+    From: <br>
     <input type="datetime-local" formControlName="from" required>
   </label>
   <label>
+    To: <br>
     <input type="datetime-local" formControlName="to">
   </label>
   <label>
+    Interval: <br>
     <input type="time" step="1" formControlName="interval" required>
   </label>
   <label>
-    <select formControlName="sampleType">
+    Sample Type: <br>
+    <select formControlName="sampleType" style="height: 18px;">
       <option *ngFor="let opt of typeoptions">
         {{opt}}
       </option>
     </select>
   </label>
-  <button type="submit">Save</button>
+  <button type="submit">Send request</button>
 </form>
 
-<div *ngIf="samples">
+<div *ngIf="samples" fxLayout="row">
   <div *ngFor="let sample of samples">
     <mat-card>
-      <mat-card-header>{{sample.time}}</mat-card-header>
-      <mat-card-subtitle>{{getString(sample)}}</mat-card-subtitle>
-      <mat-card-content>{{sample.value}}</mat-card-content>
+      <mat-card-header>Timestamp: {{sample.time}}</mat-card-header>
+      <mat-card-header>Quality: {{getString(sample)}}</mat-card-header>
+      <mat-card-content>Value: {{sample.value}}</mat-card-content>
     </mat-card>
   </div>
 </div>
+
+<hot-table [settings]="settings"></hot-table>

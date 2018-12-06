@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {RequestService} from '../../Shared/Services/request.service';
 import {Sample} from '../../Shared/Models/sample';
 
+
 @Component({
   selector: 'app-make-request',
   templateUrl: './make-request.component.html',
@@ -19,14 +20,14 @@ export class MakeRequestComponent implements OnInit {
   });
 
   samples: Sample[];
-  typeoptions: Array<string> = ['Point', 'Average', 'Maximum', 'Minimum'];
 
   constructor(private service: RequestService) { }
+
+  settings;
 
   ngOnInit() {
 
   }
-
   save() {
     const req = this.sendRequestForm.value;
 
@@ -38,6 +39,5 @@ export class MakeRequestComponent implements OnInit {
     } else if (sample.quality === 1) {
       return 'Suspect';
     } else { return 'Bad'; }
-}
-
+  }
 }
