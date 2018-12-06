@@ -17,7 +17,7 @@
   </label>
   <label>
     Sample Type: <br>
-    <select formControlName="sampleType" style="height: 18px;">
+    <select formControlName="sampleType">
       <option *ngFor="let opt of typeoptions">
         {{opt}}
       </option>
@@ -26,16 +26,16 @@
   <button type="submit">Send request</button>
 </form>
 
-<!--<div *ngIf="samples" fxLayout="row">
+<div *ngIf="samples" fxLayout="row">
   <div *ngFor="let sample of samples">
     <mat-card>
       <mat-card-header>Timestamp: {{sample.time}}</mat-card-header>
       <mat-card-header>Quality: {{getString(sample)}}</mat-card-header>
-      <mat-card-content>Value: {{sample.value}}</mat-card-content>
+      <mat-card-content>Value: <br>{{sample.value}}</mat-card-content>
     </mat-card>
   </div>
 </div>
--->
+<!--
 <div *ngIf="samples">
   <table mat-table [dataSource]="samples" class="mat-elevation-z8">
  <ng-container matColumnDef="value">
@@ -50,3 +50,4 @@
 
   </table>
 </div>
+-->

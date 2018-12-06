@@ -30,7 +30,11 @@ export class MakeRequestComponent implements OnInit {
 
   }
   save() {
+    debugger;
     const req = this.sendRequestForm.value;
+    if (req.sampleType === '') {
+      req.sampleType = 'Average';
+    }
 
     this.service.sendRequest(req).subscribe(o => { this.samples = o; } );
   }
