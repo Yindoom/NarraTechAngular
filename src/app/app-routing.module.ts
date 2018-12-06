@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'adduser', component: AddUserComponent, canActivate: [AuthGuard] },
   { path: 'userdetail/:id', component: DetailUserComponent },
   { path: 'updateuser/:id', component: UpdateUserComponent },
-  { path: 'request', component: MakeRequestComponent }
+  { path: 'request', component: MakeRequestComponent },
   { path: 'login', component: LoginComponent},
   { path: 'logs', component: ListLogsComponent}
 ];
