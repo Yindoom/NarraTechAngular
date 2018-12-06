@@ -1,0 +1,61 @@
+<form [formGroup]="sendRequestForm" (ngSubmit)="save()" fxLayout="row">
+  <label>
+    TagName: <br>
+    <input type="text" formControlName="tagName" style="height: 18px" required>
+  </label>
+  <label>
+    From: <br>
+    <input type="datetime-local" formControlName="from" required>
+  </label>
+  <label>
+    To: <br>
+    <input type="datetime-local" formControlName="to">
+  </label>
+  <label>
+    Interval: <br>
+    <input type="time" step="1" formControlName="interval" required>
+  </label>
+  <label>
+    Sample Type: <br>
+    <select formControlName="sampleType">
+      <option *ngFor="let opt of typeoptions">
+        {{opt}}
+      </option>
+    </select>
+  </label>
+  <button type="submit">Send request</button>
+</form>
+
+<!--<div *ngIf="samples" fxLayout="row">
+  <div *ngFor="let sample of samples">
+    <mat-card>
+      <mat-card-header>Timestamp: {{sample.time}}</mat-card-header>
+      <mat-card-header>Quality: {{getString(sample)}}</mat-card-header>
+      <mat-card-content>Value: <br>{{sample.value}}</mat-card-content>
+    </mat-card>
+  </div>
+</div>
+-->
+<div *ngIf="samples">
+  <table mat-table [dataSource]="samples">
+
+    <ng-container matColumnDef="timestamp">
+      <th mat-header-cell *matHeaderCellDef>Timestamp</th>
+      <td mat-cell *matCellDef="let sample">{{sample.time}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="quality">
+      <th mat-header-cell *matHeaderCellDef>Quality</th>
+      <td mat-cell *matCellDef="let sample">{{getString(sample)}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="value">
+      <th mat-header-cell *matHeaderCellDef>Value</th>
+    <td mat-cell *matCellDef="let sample">{{sample.value}}</td>
+  </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
