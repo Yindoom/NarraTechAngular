@@ -17,7 +17,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MakeRequestComponent } from './requests/make-request/make-request.component';
-import { MatTableModule } from '@angular/material';
 import { LoginComponent } from './Shared/login/login.component';
 import { ListLogsComponent } from './logs/list-logs/list-logs.component';
 import { MatTableModule } from '@angular/material';
