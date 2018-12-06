@@ -18,7 +18,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material/card';
 import {MakeRequestComponent} from './requests/make-request/make-request.component';
 import {MatTableModule} from '@angular/material';
-import {HotTableModule} from 'angular-handsontable';
 
 @NgModule({
   declarations: [
@@ -41,8 +40,7 @@ import {HotTableModule} from 'angular-handsontable';
     MatSidenavModule,
     FlexLayoutModule,
     MatCardModule,
-    MatTableModule,
-    HotTableModule
+    MatTableModule
 
   ],
   providers: [],
