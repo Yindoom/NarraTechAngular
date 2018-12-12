@@ -16,7 +16,7 @@ export interface LogTable {
 })
 
 export class ListLogsComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'user', 'action', 'success'];
+  displayedColumns: string[] = ['id', 'requestId' , 'user', 'action', 'success'];
 
 
   constructor(private service: LogService) { }

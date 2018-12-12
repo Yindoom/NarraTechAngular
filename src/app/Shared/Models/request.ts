@@ -1,4 +1,6 @@
 import {TimeInterval} from 'rxjs';
+import {User} from './user';
+import {Log} from './log';
 
 export class Request {
   tagName: string;
@@ -6,4 +8,6 @@ export class Request {
   to: Date;
   interval: TimeInterval<number>;
   sampleType: string;
+  user: User;
+  logs: Log[];
 }

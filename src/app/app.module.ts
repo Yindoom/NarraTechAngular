@@ -10,7 +10,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { DetailUserComponent } from './users/detail-user/detail-user.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
+import { NavbarComponent } from './Shared/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material/sidenav';
