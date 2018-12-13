@@ -5,6 +5,6 @@ export class Log {
   id?: number;
   request: Request;
   success: boolean;
-  action: string;
+  message: string;
   time: DateTimeFormat;
 }

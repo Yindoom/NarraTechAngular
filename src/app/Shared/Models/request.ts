@@ -3,6 +3,7 @@ import {User} from './user';
 import {Log} from './log';
 
 export class Request {
+  id?: number;
   tagName: string;
   from: Date;
   to: Date;

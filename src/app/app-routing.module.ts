@@ -9,6 +9,8 @@ import {MakeRequestComponent} from './requests/make-request/make-request.compone
 import {LoginComponent} from './Shared/login/login.component';
 import {AuthGuard} from './_guards/auth.guard';
 import {ListLogsComponent} from './logs/list-logs/list-logs.component';
+import {ShowRequestsComponent} from './requests/show-requests/show-requests.component';
+import {RequestDataComponent} from './requests/request-data/request-data.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent},
@@ -16,9 +18,11 @@ const routes: Routes = [
   { path: 'adduser', component: AddUserComponent, canActivate: [AuthGuard] },
   { path: 'userdetail/:id', component: DetailUserComponent },
   { path: 'updateuser/:id', component: UpdateUserComponent },
-  { path: 'request', component: MakeRequestComponent },
+  { path: 'request', component: MakeRequestComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent},
-  { path: 'logs', component: ListLogsComponent}
+  { path: 'logs', component: ListLogsComponent},
+  { path: 'requestlist', component: ShowRequestsComponent, canActivate: [AuthGuard]},
+  { path: 'requestdata/:id', component: RequestDataComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

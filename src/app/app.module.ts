@@ -20,6 +20,8 @@ import { MakeRequestComponent } from './requests/make-request/make-request.compo
 import { LoginComponent } from './Shared/login/login.component';
 import { ListLogsComponent } from './logs/list-logs/list-logs.component';
 import { MatTableModule } from '@angular/material';
+import { ShowRequestsComponent } from './requests/show-requests/show-requests.component';
+import { RequestDataComponent } from './requests/request-data/request-data.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { MatTableModule } from '@angular/material';
     NavbarComponent,
     MakeRequestComponent,
     LoginComponent,
-    ListLogsComponent
+    ListLogsComponent,
+    ShowRequestsComponent,
+    RequestDataComponent
   ],
   imports: [
     BrowserModule,

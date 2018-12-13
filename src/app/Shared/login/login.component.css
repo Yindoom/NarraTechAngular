@@ -1,0 +1,12 @@
+h1 {
+  color: white;
+}
+label {
+  color: white;
+}
+button{
+  background-color: #383c4a;
+  -webkit-tap-highlight-color: #5294e2;
+  color: white;
+
+}

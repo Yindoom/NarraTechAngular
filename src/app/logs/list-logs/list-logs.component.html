@@ -19,8 +19,8 @@
     <td mat-cell *matCellDef="let Log"> {{Log.request.user.username}} </td>
   </ng-container>
   <ng-container matColumnDef="action">
-    <th mat-header-cell *matHeaderCellDef> Action </th>
-    <td mat-cell *matCellDef="let Log"> {{Log.action}} </td>
+    <th mat-header-cell *matHeaderCellDef> Message </th>
+    <td mat-cell *matCellDef="let Log"> {{Log.message}} </td>
   </ng-container>
 
   <ng-container matColumnDef="success">

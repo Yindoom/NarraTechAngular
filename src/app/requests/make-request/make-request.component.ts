@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {RequestService} from '../../Shared/Services/request.service';
 import {Sample} from '../../Shared/Models/sample';
+import {BooltostringService} from '../../Shared/Services/booltostring.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -18,31 +20,20 @@ export class MakeRequestComponent implements OnInit {
     interval: new FormControl(''),
     sampleType: new FormControl('')
   });
-
-  samples: Sample[];
-
   typeoptions = ['Average', 'Point', 'Maximum', 'Minimum'];
 
-  displayedColumns = ['timestamp', 'quality', 'value'];
-
-  constructor(private service: RequestService) { }
+  constructor(private service: RequestService, private router: Router) { }
 
   ngOnInit() {
 
   }
   save() {
+
     const req = this.sendRequestForm.value;
     if (req.sampleType === '') {
       req.sampleType = 'Average';
     }
 
-    this.service.sendRequest(req).subscribe(o => { this.samples = o; } );
-  }
-  getString(sample: Sample): string {
-    if (sample.quality === 0) {
-      return 'Good';
-    } else if (sample.quality === 1) {
-      return 'Suspect';
-    } else { return 'Bad'; }
+    this.service.sendRequest(req).subscribe(o => { this.router.navigateByUrl('/requestlist'); } );
   }
 }
