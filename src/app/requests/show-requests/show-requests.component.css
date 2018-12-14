@@ -1,0 +1,10 @@
+mat-card {
+
+  width: 7cm;
+  background: #383c4a;
+  color: white;
+}
+
+mat-card-subtitle {
+  color: white;
+}
