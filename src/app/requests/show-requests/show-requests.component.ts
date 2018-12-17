@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthGuard} from '../../_guards/auth.guard';
 import {LoginService} from '../../Shared/Services/login.service';
 import {RequestService} from '../../Shared/Services/request.service';
-import {BooltostringService} from '../../Shared/Services/booltostring.service';
 
 @Component({
   selector: 'app-show-requests',
@@ -11,9 +9,10 @@ import {BooltostringService} from '../../Shared/Services/booltostring.service';
 })
 export class ShowRequestsComponent implements OnInit {
 
-  constructor(private token: LoginService, private requestService: RequestService, private stringer: BooltostringService) { }
+  constructor(private token: LoginService, private requestService: RequestService) { }
   requests: Request[];
 
+  // gets all requests from the backend, based on the user that is currently logged in.
   ngOnInit() {
     const user = this.token.getUsername();
 

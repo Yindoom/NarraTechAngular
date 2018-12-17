@@ -8,3 +8,10 @@ mat-card {
 mat-card-subtitle {
   color: white;
 }
+
+#card {
+  padding-bottom: 5mm;
+}
+.mat-cell {
+  color: white;
+}

@@ -1,0 +1,13 @@
+table {
+  width: 16cm;
+  background-color: #383c4a;
+  font-palette: light;
+}
+
+th {
+  color: white;
+}
+
+td {
+  color: white;
+}

@@ -1,5 +1,6 @@
 <div *ngIf="requests">
   <div *ngFor="let req of requests">
+    <div id="card">
     <mat-card>
       <mat-card-title>
         {{req.tagName}}
@@ -16,5 +17,6 @@
         <button mat-button routerLink="/requestdata/{{req.id}}">Get Data</button>
       </mat-card-actions>
     </mat-card>
+    </div>
   </div>
 </div>

@@ -10,7 +10,9 @@ import {UserService} from '../../Shared/Services/user.service';
 export class ListUsersComponent implements OnInit {
 
   constructor(private service: UserService) { }
+
 users: User[];
+
   ngOnInit() {
     this.service.getAllUsers().subscribe(list => { this.users = list; } );
   }

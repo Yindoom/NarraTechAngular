@@ -13,13 +13,22 @@ export class RequestDataComponent implements OnInit {
 
   constructor(private sample: SampleService, private route: ActivatedRoute, private stringer: BooltostringService) { }
 
+  // List of samples.
   samples: Sample[];
+  // columns for mat-table in view.
   displayedColumns = ['timestamp', 'quality', 'value'];
 
+  // Why does this say it's being used??
+  value = 90;
+
+  // Fetches the data using the Id of the request. (Id is gotten from the url.
+  // This part is the entire point of the application
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.sample.getSamples(id).subscribe(s => { this.samples = s; } );
   }
+
+  // uses the bool-to-string service, to make a boolean into a displayable string
 getString(sample: Sample): string {
     return this.stringer.getStringSample(sample);
 }

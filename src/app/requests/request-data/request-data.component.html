@@ -6,7 +6,7 @@
       <td mat-cell *matCellDef="let sample">{{sample.time}}</td>
     </ng-container>
 
-    <ng-container matColumnDef="quality">
+    <ng-container matColumnDef="quality" id="quality">
       <th mat-header-cell *matHeaderCellDef>Quality</th>
       <td mat-cell *matCellDef="let sample">{{getString(sample)}}</td>
     </ng-container>
@@ -21,3 +21,7 @@
   </table>
 </div>
 
+<div *ngIf="!samples">
+  <h2>We are collecting your data, please be patient</h2>
+  <mat-spinner></mat-spinner>
+</div>

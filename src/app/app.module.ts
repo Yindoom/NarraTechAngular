@@ -22,6 +22,8 @@ import { ListLogsComponent } from './logs/list-logs/list-logs.component';
 import { MatTableModule } from '@angular/material';
 import { ShowRequestsComponent } from './requests/show-requests/show-requests.component';
 import { RequestDataComponent } from './requests/request-data/request-data.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { RequestDataComponent } from './requests/request-data/request-data.compo
     MatSidenavModule,
     FlexLayoutModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule
 
   ],
   providers: [],
