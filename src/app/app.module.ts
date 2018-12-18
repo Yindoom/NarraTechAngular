@@ -10,7 +10,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { DetailUserComponent } from './users/detail-user/detail-user.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
+import { NavbarComponent } from './Shared/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -20,6 +20,10 @@ import { MakeRequestComponent } from './requests/make-request/make-request.compo
 import { LoginComponent } from './Shared/login/login.component';
 import { ListLogsComponent } from './logs/list-logs/list-logs.component';
 import { MatTableModule } from '@angular/material';
+import { ShowRequestsComponent } from './requests/show-requests/show-requests.component';
+import { RequestDataComponent } from './requests/request-data/request-data.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,9 @@ import { MatTableModule } from '@angular/material';
     NavbarComponent,
     MakeRequestComponent,
     LoginComponent,
-    ListLogsComponent
+    ListLogsComponent,
+    ShowRequestsComponent,
+    RequestDataComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +50,9 @@ import { MatTableModule } from '@angular/material';
     MatSidenavModule,
     FlexLayoutModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule
 
   ],
   providers: [],

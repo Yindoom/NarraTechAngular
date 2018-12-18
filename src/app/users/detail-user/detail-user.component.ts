@@ -12,6 +12,7 @@ export class DetailUserComponent implements OnInit {
 user: User;
   constructor(private service: UserService, private router: Router, private route: ActivatedRoute) { }
 
+  // id is a number
   id: number;
 
   ngOnInit() {

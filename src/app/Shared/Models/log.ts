@@ -3,8 +3,8 @@ import {User} from './user';
 
 export class Log {
   id?: number;
-  user: User;
+  request: Request;
   success: boolean;
-  action: string;
+  message: string;
   time: DateTimeFormat;
 }

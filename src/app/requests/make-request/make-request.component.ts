@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {RequestService} from '../../Shared/Services/request.service';
-import {Sample} from '../../Shared/Models/sample';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -11,6 +11,7 @@ import {Sample} from '../../Shared/Models/sample';
 })
 export class MakeRequestComponent implements OnInit {
 
+  // Reactive form to manually create a request for data
   sendRequestForm = new FormGroup({
     tagName: new FormControl(''),
     from: new FormControl(''),
@@ -19,30 +20,25 @@ export class MakeRequestComponent implements OnInit {
     sampleType: new FormControl('')
   });
 
-  samples: Sample[];
-
+  // Sample type options, limited to avrg, exact, max val and min val
   typeoptions = ['Average', 'Point', 'Maximum', 'Minimum'];
 
-  displayedColumns = ['timestamp', 'quality', 'value'];
-
-  constructor(private service: RequestService) { }
+  constructor(private service: RequestService, private router: Router) { }
 
   ngOnInit() {
 
   }
+
+  // sends created request to the backend
+  // Due to the options picker being freaky, the if-statement is a work-around for the default value being null
+  // navigates to the requestlist component afterwards
   save() {
+
     const req = this.sendRequestForm.value;
     if (req.sampleType === '') {
       req.sampleType = 'Average';
     }
 
-    this.service.sendRequest(req).subscribe(o => { this.samples = o; } );
-  }
-  getString(sample: Sample): string {
-    if (sample.quality === 0) {
-      return 'Good';
-    } else if (sample.quality === 1) {
-      return 'Suspect';
-    } else { return 'Bad'; }
+    this.service.sendRequest(req).subscribe(o => { this.router.navigateByUrl('/requestlist'); } );
   }
 }
